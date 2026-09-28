@@ -5,7 +5,8 @@ Usage:
   python3 dump_pdf_text.py "<file.pdf>" [range] [--shift N]
 
   range : 'all' (default), a single page '7', or a span '3-12'
-  --shift N : decode a Caesar-shifted text layer by N (e.g. --shift 2 for SkyBridge-style PDFs)
+  --shift N : decode a Caesar-shifted text layer by N (some issuers ship PDFs whose text is
+              offset by a fixed amount, e.g. --shift 2; the rendered image always reads fine)
 """
 import sys
 try:

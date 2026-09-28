@@ -4,35 +4,38 @@ Write **one JSON file per K-1** into a working `data/` directory (e.g. `data/34.
 shape identical across every K-1 so `build_workbook.py` can compile them. Amounts are numbers
 (no commas, no `$`); losses/parentheses are **negative**; unknown numerics are `null`, not `0`.
 
+The values below are a **fictional illustration** of the shape only — use the real numbers you read
+from each K-1.
+
 ```json
 {
-  "file_num": "34",
-  "entity_name": "VistaOne, L.P.",
-  "entity_ein": "33-1386882",
+  "file_num": "01",
+  "entity_name": "Example Partners Fund, LP",
+  "entity_ein": "00-0000000",
   "form_type": "1065",
   "final_k1": false,
   "boxes": {
-    "6a": {"amount": 1494},
-    "11": {"amount": null, "detail": [{"code": "A", "label": "Other portfolio income", "amount": 123}]},
-    "13": {"amount": 4222, "detail": [{"code": "AE", "label": "Portfolio deductions - investment expenses", "amount": 4222}]},
+    "6a": {"amount": 1000},
+    "11": {"amount": null, "detail": [{"code": "A", "label": "Other portfolio income", "amount": 100}]},
+    "13": {"amount": 500, "detail": [{"code": "AE", "label": "Portfolio deductions - investment expenses", "amount": 500}]},
     "16": {"k3_attached": true},
     "19": {"detail": [{"code": "A", "label": "Cash & marketable securities", "amount": null}]},
-    "20": {"detail": [{"code": "A", "label": "Investment income", "amount": 1494},
+    "20": {"detail": [{"code": "A", "label": "Investment income", "amount": 1000},
                        {"code": "Y", "label": "Net investment income", "amount": null}]},
     "21": {"amount": null}
   },
   "capital_account": {
-    "beginning": 0, "contributed": 125000, "current_year_net_income": -2728,
-    "other_increase_decrease": null, "withdrawals_distributions": 0, "ending": 122272,
-    "ties": true, "computed_ending": 122272
+    "beginning": 10000, "contributed": 5000, "current_year_net_income": -500,
+    "other_increase_decrease": null, "withdrawals_distributions": 2000, "ending": 12500,
+    "ties": true, "computed_ending": 12500
   },
   "liabilities": {
-    "nonrecourse_beg": null, "nonrecourse_end": 7969,
+    "nonrecourse_beg": null, "nonrecourse_end": 3000,
     "qualified_nonrecourse_beg": null, "qualified_nonrecourse_end": null,
     "recourse_beg": null, "recourse_end": null
   },
   "states": [
-    {"state": "CA", "income": 4433, "withholding": 369, "composite": false, "notes": "592-B nonresident wh"}
+    {"state": "XX", "income": 1200, "withholding": 60, "composite": false, "notes": "nonresident withholding (e.g. CA 592-B)"}
   ],
   "notes": "Anything notable, ambiguous, or that did not tie."
 }
