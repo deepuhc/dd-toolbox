@@ -5,20 +5,25 @@ skills and plugins so you (and anyone you share it with) can install them on dem
 
 ## Install this marketplace
 
-In Claude Code:
+**Full, step-by-step instructions for both humans and agents are in [INSTALL.md](INSTALL.md).**
+Agents should also read [AGENTS.md](AGENTS.md). The short version, in Claude Code:
 
-```
+```text
 /plugin marketplace add <your-github-username>/claude-plugin-marketplace
 /plugin install k1-workpaper-builder@ddeepak-marketplace
 ```
 
-You can also add it from a local clone during development:
+Installing the plugin automatically registers its **skills and commands** — there is no separate
+skill-install step. Confirm with `/plugin` and by typing `/` to see the `/k1-workpaper` command;
+restart/reload Claude Code if it doesn't appear immediately.
 
-```
+During development you can add it from a local clone instead:
+
+```text
 /plugin marketplace add /Users/ddeepak/claude-plugin-marketplace
 ```
 
-Then restart Claude Code (or reload plugins) and the plugin's skills and commands become available.
+The bundled scripts are also usable **standalone** (no plugin runtime) — see INSTALL.md → Part B.
 
 ## Plugins in this marketplace
 
