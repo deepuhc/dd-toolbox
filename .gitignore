@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Work artifacts / rendered images / client data — never commit these
+_k1_img/
+_work/
+data/
+*.xlsx
+*.pdf
+
+# OS
+.DS_Store

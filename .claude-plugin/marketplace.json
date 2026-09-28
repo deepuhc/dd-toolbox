@@ -1,0 +1,20 @@
+{
+  "name": "ddeepak-marketplace",
+  "owner": {
+    "name": "ddeepak"
+  },
+  "metadata": {
+    "description": "A personal marketplace of Claude Code plugins and skills — install them yourself or share with others.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "k1-workpaper-builder",
+      "source": "./plugins/k1-workpaper-builder",
+      "description": "Extract Schedule K-1 (Form 1065 & 1120-S) tax packages into a verified, multi-sheet Excel workpaper: every Part III box, per-code statement detail, capital accounts, liabilities, tie-out checks, and a state income/withholding/composite summary.",
+      "version": "1.0.0",
+      "category": "finance",
+      "keywords": ["tax", "k-1", "schedule-k-1", "1065", "1120s", "cpa", "accounting", "pdf", "spreadsheet", "workpaper"]
+    }
+  ]
+}
