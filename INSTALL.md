@@ -4,7 +4,7 @@ This guide covers installing the marketplace, its plugins, and their **skills** 
 written for both **humans** (using Claude Code interactively) and **agents / automation** (headless
 sessions, CI, or other frameworks). Wherever `<owner>` appears, substitute your GitHub username.
 
-- Marketplace name: **`ddeepak-marketplace`**
+- Marketplace name: **`dd-toolbox`**
 - Plugin: **`k1-workpaper-builder`** (provides the `k1-workpaper-builder` skill and the `/k1-workpaper` command)
 
 ---
@@ -27,18 +27,18 @@ Run one of these inside Claude Code (type it at the prompt). `/plugin marketplac
 GitHub `owner/repo`, a full git URL, or a local path:
 
 ```text
-/plugin marketplace add <owner>/claude-plugin-marketplace        # published GitHub repo
-/plugin marketplace add https://github.com/<owner>/claude-plugin-marketplace.git
-/plugin marketplace add /Users/ddeepak/claude-plugin-marketplace # local clone (development)
+/plugin marketplace add <owner>/dd-toolbox        # published GitHub repo
+/plugin marketplace add https://github.com/<owner>/dd-toolbox.git
+/plugin marketplace add /Users/ddeepak/dd-toolbox # local clone (development)
 ```
 
 Claude Code will ask you to **trust** the marketplace before it loads — review and confirm.
 
 ### 2. Install the plugin (this also installs its skills + commands)
 ```text
-/plugin install k1-workpaper-builder@ddeepak-marketplace
+/plugin install k1-workpaper-builder@dd-toolbox
 ```
-Or browse interactively: run **`/plugin`** → **Marketplaces** → pick `ddeepak-marketplace` →
+Or browse interactively: run **`/plugin`** → **Marketplaces** → pick `dd-toolbox` →
 select `k1-workpaper-builder` → **Install**. Installing a plugin automatically registers everything
 it bundles — its `skills/`, `commands/`, `agents/`, and `hooks/`. You do **not** install skills
 separately.
@@ -61,14 +61,14 @@ separately.
 
 ### 5. Update to the latest version
 ```text
-/plugin marketplace update ddeepak-marketplace
+/plugin marketplace update dd-toolbox
 ```
 Then, if prompted, reinstall/re-enable the plugin.
 
 ### 6. Uninstall / remove
 ```text
-/plugin uninstall k1-workpaper-builder@ddeepak-marketplace
-/plugin marketplace remove ddeepak-marketplace
+/plugin uninstall k1-workpaper-builder@dd-toolbox
+/plugin marketplace remove dd-toolbox
 ```
 
 ### 7. Team-wide / project auto-load (optional)
@@ -79,12 +79,12 @@ To make the marketplace + plugin load automatically for everyone who opens a rep
 {
   // register the marketplace so teammates don't have to add it manually
   "extraKnownMarketplaces": {
-    "ddeepak-marketplace": {
-      "source": { "source": "github", "repo": "<owner>/claude-plugin-marketplace" }
+    "dd-toolbox": {
+      "source": { "source": "github", "repo": "<owner>/dd-toolbox" }
     }
   },
   // enable the plugin for everyone on this project
-  "enabledPlugins": { "k1-workpaper-builder@ddeepak-marketplace": true }
+  "enabledPlugins": { "k1-workpaper-builder@dd-toolbox": true }
 }
 ```
 
@@ -110,8 +110,8 @@ There are three ways an agent can use this, depending on whether the plugin runt
 The skill is **self-contained**; the bundled scripts are plain Python and work standalone:
 
 ```bash
-git clone https://github.com/<owner>/claude-plugin-marketplace
-cd claude-plugin-marketplace
+git clone https://github.com/<owner>/dd-toolbox
+cd dd-toolbox
 pip3 install pymupdf openpyxl
 
 SKILL=plugins/k1-workpaper-builder/skills/k1-workpaper-builder

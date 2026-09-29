@@ -1,4 +1,4 @@
-# ddeepak-marketplace
+# dd-toolbox
 
 A personal [Claude Code](https://claude.com/claude-code) **plugin marketplace** — a place to host
 skills and plugins so you (and anyone you share it with) can install them on demand.
@@ -9,8 +9,8 @@ skills and plugins so you (and anyone you share it with) can install them on dem
 Agents should also read [AGENTS.md](AGENTS.md). The short version, in Claude Code:
 
 ```text
-/plugin marketplace add <your-github-username>/claude-plugin-marketplace
-/plugin install k1-workpaper-builder@ddeepak-marketplace
+/plugin marketplace add <your-github-username>/dd-toolbox
+/plugin install k1-workpaper-builder@dd-toolbox
 ```
 
 Installing the plugin automatically registers its **skills and commands** — there is no separate
@@ -20,7 +20,7 @@ restart/reload Claude Code if it doesn't appear immediately.
 During development you can add it from a local clone instead:
 
 ```text
-/plugin marketplace add /Users/ddeepak/claude-plugin-marketplace
+/plugin marketplace add /Users/ddeepak/dd-toolbox
 ```
 
 The bundled scripts are also usable **standalone** (no plugin runtime) — see INSTALL.md → Part B.
@@ -56,7 +56,7 @@ The bundled scripts are also usable **standalone** (no plugin runtime) — see I
 1. Create `plugins/<your-plugin>/.claude-plugin/plugin.json`.
 2. Add `skills/`, `commands/`, `agents/`, or `hooks/` under the plugin directory.
 3. Append an entry to `plugins` in `.claude-plugin/marketplace.json`.
-4. Commit and push. Consumers run `/plugin marketplace update ddeepak-marketplace` to pull it.
+4. Commit and push. Consumers run `/plugin marketplace update dd-toolbox` to pull it.
 
 ## Requirements
 

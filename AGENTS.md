@@ -3,7 +3,7 @@
 Instructions for AI agents operating on or with this repository. Humans: see [INSTALL.md](INSTALL.md).
 
 ## What this repo is
-A **Claude Code plugin marketplace** (`ddeepak-marketplace`). The manifest is
+A **Claude Code plugin marketplace** (`dd-toolbox`). The manifest is
 `.claude-plugin/marketplace.json`; each plugin lives under `plugins/<name>/` with a
 `.claude-plugin/plugin.json` and its `skills/`, `commands/`, `agents/`, and/or `hooks/`.
 
