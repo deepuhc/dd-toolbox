@@ -2,8 +2,9 @@
 
 This guide covers installing the marketplace, its plugins, and their **skills** and **commands** —
 written for both **humans** (using Claude Code interactively) and **agents / automation** (headless
-sessions, CI, or other frameworks). Wherever `deepuhc` appears, substitute your GitHub username.
+sessions, CI, or other frameworks).
 
+- Repository: **`github.com/deepthip47/dd-toolbox`**
 - Marketplace name: **`dd-toolbox`**
 - Plugin: **`k1-workpaper-builder`** (provides the `k1-workpaper-builder` skill and the `/k1-workpaper` command)
 
@@ -27,8 +28,8 @@ Run one of these inside Claude Code (type it at the prompt). `/plugin marketplac
 GitHub `owner/repo`, a full git URL, or a local path:
 
 ```text
-/plugin marketplace add deepuhc/dd-toolbox        # published GitHub repo
-/plugin marketplace add https://github.com/deepuhc/dd-toolbox.git
+/plugin marketplace add deepthip47/dd-toolbox        # published GitHub repo
+/plugin marketplace add https://github.com/deepthip47/dd-toolbox.git
 /plugin marketplace add /Users/ddeepak/dd-toolbox # local clone (development)
 ```
 
@@ -80,7 +81,7 @@ To make the marketplace + plugin load automatically for everyone who opens a rep
   // register the marketplace so teammates don't have to add it manually
   "extraKnownMarketplaces": {
     "dd-toolbox": {
-      "source": { "source": "github", "repo": "deepuhc/dd-toolbox" }
+      "source": { "source": "github", "repo": "deepthip47/dd-toolbox" }
     }
   },
   // enable the plugin for everyone on this project
@@ -110,7 +111,7 @@ There are three ways an agent can use this, depending on whether the plugin runt
 The skill is **self-contained**; the bundled scripts are plain Python and work standalone:
 
 ```bash
-git clone https://github.com/deepuhc/dd-toolbox
+git clone https://github.com/deepthip47/dd-toolbox
 cd dd-toolbox
 pip3 install pymupdf openpyxl
 

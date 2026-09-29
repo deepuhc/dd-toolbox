@@ -9,7 +9,7 @@ skills and plugins so you (and anyone you share it with) can install them on dem
 Agents should also read [AGENTS.md](AGENTS.md). The short version, in Claude Code:
 
 ```text
-/plugin marketplace add deepuhc/dd-toolbox
+/plugin marketplace add deepthip47/dd-toolbox
 /plugin install k1-workpaper-builder@dd-toolbox
 ```
 
