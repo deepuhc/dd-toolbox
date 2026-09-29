@@ -4,8 +4,8 @@ This guide covers installing the marketplace, its plugins, and their **skills** 
 written for both **humans** (using Claude Code interactively) and **agents / automation** (headless
 sessions, CI, or other frameworks).
 
-- Repository: **`github.com/deepthip47/dd-toolbox`**
-- Marketplace name: **`dd-toolbox`**
+- Repository (git URL): **`https://github.com/deepthip47/dd-toolbox.git`**
+- Marketplace name: **`dd-toolbox`** (comes from the manifest, so it stays the same even if you use a fork)
 - Plugin: **`k1-workpaper-builder`** (provides the `k1-workpaper-builder` skill and the `/k1-workpaper` command)
 
 ---
@@ -24,16 +24,22 @@ sessions, CI, or other frameworks).
 ## Part A — For humans (Claude Code, interactive)
 
 ### 1. Add the marketplace
-Run one of these inside Claude Code (type it at the prompt). `/plugin marketplace add` accepts a
-GitHub `owner/repo`, a full git URL, or a local path:
+Type this **at the Claude Code prompt** — not in your terminal shell (slash commands only work
+inside Claude Code):
 
 ```text
-/plugin marketplace add deepthip47/dd-toolbox        # published GitHub repo
 /plugin marketplace add https://github.com/deepthip47/dd-toolbox.git
-/plugin marketplace add /Users/ddeepak/dd-toolbox # local clone (development)
 ```
 
 Claude Code will ask you to **trust** the marketplace before it loads — review and confirm.
+
+Other sources `/plugin marketplace add` accepts, if you aren't using the repo above:
+
+```text
+/plugin marketplace add https://github.com/<your-account>/dd-toolbox.git   # your own fork
+/plugin marketplace add git@github.com:<your-account>/dd-toolbox.git       # SSH remote
+/plugin marketplace add /path/to/your/clone/of/dd-toolbox                  # local clone (development)
+```
 
 ### 2. Install the plugin (this also installs its skills + commands)
 ```text
@@ -81,7 +87,10 @@ To make the marketplace + plugin load automatically for everyone who opens a rep
   // register the marketplace so teammates don't have to add it manually
   "extraKnownMarketplaces": {
     "dd-toolbox": {
-      "source": { "source": "github", "repo": "deepthip47/dd-toolbox" }
+      "source": {
+        "source": "git",
+        "url": "https://github.com/deepthip47/dd-toolbox.git"
+      }
     }
   },
   // enable the plugin for everyone on this project
@@ -111,7 +120,7 @@ There are three ways an agent can use this, depending on whether the plugin runt
 The skill is **self-contained**; the bundled scripts are plain Python and work standalone:
 
 ```bash
-git clone https://github.com/deepthip47/dd-toolbox
+git clone https://github.com/deepthip47/dd-toolbox.git
 cd dd-toolbox
 pip3 install pymupdf openpyxl
 
@@ -154,7 +163,8 @@ command becomes available after a reload.
 
 | Symptom | Fix |
 | ------- | --- |
-| "Marketplace not found" on add | Repo must be public (or you must have access). Try the full `https://…​.git` URL, or add a local clone by path. |
+| "Marketplace not found" / nothing happens on add | Make sure you typed it **at the Claude Code prompt**, not in your terminal. Use the explicit git URL (`https://github.com/deepthip47/dd-toolbox.git`), and confirm the repo is reachable for you: `git ls-remote https://github.com/deepthip47/dd-toolbox.git`. |
+| Add fails behind a proxy/SSO or on a private fork | Use an SSH URL (`git@github.com:<account>/dd-toolbox.git`) with a working key, or `git clone` it and add the local path. |
 | Plugin installed but `/k1-workpaper` missing | Restart/reload Claude Code; run `/plugin` and confirm the plugin is **enabled**. |
 | Skill never triggers | It triggers on K-1 → spreadsheet/workpaper requests. Force it with `/k1-workpaper <folder>`, or reference the skill by the name shown in your skills list. |
 | `ModuleNotFoundError: fitz` / `openpyxl` | `pip3 install pymupdf openpyxl` (ensure the same `python3` that Claude runs). |

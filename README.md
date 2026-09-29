@@ -9,18 +9,20 @@ skills and plugins so you (and anyone you share it with) can install them on dem
 Agents should also read [AGENTS.md](AGENTS.md). The short version, in Claude Code:
 
 ```text
-/plugin marketplace add deepthip47/dd-toolbox
+/plugin marketplace add https://github.com/deepthip47/dd-toolbox.git
 /plugin install k1-workpaper-builder@dd-toolbox
 ```
 
-Installing the plugin automatically registers its **skills and commands** — there is no separate
-skill-install step. Confirm with `/plugin` and by typing `/` to see the `/k1-workpaper` command;
-restart/reload Claude Code if it doesn't appear immediately.
+Type those at the Claude Code prompt (not in your terminal shell). Claude Code will ask you to
+**trust** the marketplace — confirm it. Installing the plugin automatically registers its **skills
+and commands** — there is no separate skill-install step. Confirm with `/plugin` and by typing `/`
+to see the `/k1-workpaper` command; restart/reload Claude Code if it doesn't appear immediately.
 
-During development you can add it from a local clone instead:
+Working from your own fork or clone? Use that repository's git URL instead — everything else is
+identical, because the marketplace name comes from the manifest, not from the URL:
 
 ```text
-/plugin marketplace add /Users/ddeepak/dd-toolbox
+/plugin marketplace add https://github.com/<your-account>/dd-toolbox.git
 ```
 
 The bundled scripts are also usable **standalone** (no plugin runtime) — see INSTALL.md → Part B.
