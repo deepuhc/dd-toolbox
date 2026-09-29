@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Extract Schedule K-1 (Form 1065 & 1120-S) tax packages into a verified, multi-sheet Excel workpaper with tie-out checks and a state income/withholding/composite summary.",
   "author": {
-    "name": "ddeepak"
+    "name": "deepuhc"
   },
   "keywords": ["tax", "k-1", "schedule-k-1", "1065", "1120s", "cpa", "accounting", "pdf", "spreadsheet", "workpaper"],
   "license": "MIT"
