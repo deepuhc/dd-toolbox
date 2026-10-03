@@ -4,7 +4,7 @@
     "name": "Deepthi Shastry"
   },
   "metadata": {
-    "description": "A personal marketplace of Claude Code plugins and skills — install them yourself or share with others.",
+    "description": "A personal marketplace of Claude Code plugins and skills \u2014 install them yourself or share with others.",
     "version": "1.0.0"
   },
   "plugins": [
@@ -14,7 +14,37 @@
       "description": "Extract Schedule K-1 (Form 1065 & 1120-S) tax packages into a verified, multi-sheet Excel workpaper: every Part III box, per-code statement detail, capital accounts, liabilities, tie-out checks, and a state income/withholding/composite summary.",
       "version": "1.0.0",
       "category": "finance",
-      "keywords": ["tax", "k-1", "schedule-k-1", "1065", "1120s", "cpa", "accounting", "pdf", "spreadsheet", "workpaper"]
+      "keywords": [
+        "tax",
+        "k-1",
+        "schedule-k-1",
+        "1065",
+        "1120s",
+        "cpa",
+        "accounting",
+        "pdf",
+        "spreadsheet",
+        "workpaper"
+      ]
+    },
+    {
+      "name": "401k-wire-transfer-testing",
+      "source": "./plugins/401k-wire-transfer-testing",
+      "description": "401(k) plan audit WP 5220 wire transfer / timely remittance testing: match payroll register 401(k), Roth, loan and employer match withholdings to the recordkeeper contribution report for every check date, compute business days to funding and over/(under) funding. Any payroll provider, any recordkeeper. Provides the /5220 command.",
+      "version": "1.0.0",
+      "category": "finance",
+      "keywords": [
+        "401k",
+        "benefit-plan-audit",
+        "5220",
+        "timely-remittance",
+        "wire-transfer",
+        "payroll",
+        "recordkeeper",
+        "trustee",
+        "audit",
+        "workpaper"
+      ]
     }
   ]
 }

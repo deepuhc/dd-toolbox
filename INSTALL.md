@@ -6,7 +6,9 @@ sessions, CI, or other frameworks).
 
 - Repository (git URL): **`https://github.com/deepthip47/dd-toolbox.git`**
 - Marketplace name: **`dd-toolbox`** (comes from the manifest, so it stays the same even if you use a fork)
-- Plugin: **`k1-workpaper-builder`** (provides the `k1-workpaper-builder` skill and the `/k1-workpaper` command)
+- Plugins:
+  - **`k1-workpaper-builder`** (provides the `k1-workpaper-builder` skill and the `/k1-workpaper` command)
+  - **`401k-wire-transfer-testing`** (provides the `401k-wire-transfer-testing` skill and the `/5220` command)
 
 ---
 
@@ -44,6 +46,7 @@ Other sources `/plugin marketplace add` accepts, if you aren't using the repo ab
 ### 2. Install the plugin (this also installs its skills + commands)
 ```text
 /plugin install k1-workpaper-builder@dd-toolbox
+/plugin install 401k-wire-transfer-testing@dd-toolbox
 ```
 Or browse interactively: run **`/plugin`** → **Marketplaces** → pick `dd-toolbox` →
 select `k1-workpaper-builder` → **Install**. Installing a plugin automatically registers everything
@@ -52,7 +55,7 @@ separately.
 
 ### 3. Verify it loaded
 - **`/plugin`** → the plugin shows as **enabled**.
-- Type **`/`** (or `/help`) → the **`/k1-workpaper`** command appears.
+- Type **`/`** (or `/help`) → the **`/k1-workpaper`** and **`/5220`** commands appear.
 - **Skill:** the `k1-workpaper-builder` skill is now active. It **auto-triggers** when you ask for
   K-1 work (see step 4) — you don't call skills by hand. The `/plugin` detail view lists the skills
   a plugin provides.

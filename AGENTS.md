@@ -11,6 +11,9 @@ A **Claude Code plugin marketplace** (`dd-toolbox`). The manifest is
 - **`k1-workpaper-builder`** — turns Schedule K-1 (Form 1065 & 1120-S) PDF packages into a verified,
   multi-sheet Excel workpaper. Skill: `plugins/k1-workpaper-builder/skills/k1-workpaper-builder/SKILL.md`.
   Command: `/k1-workpaper <folder>`.
+- **`401k-wire-transfer-testing`** — 401(k) plan audit WP 5220 wire transfer / timely remittance testing
+  (payroll registers vs. recordkeeper contribution report, any provider). Skill:
+  `plugins/401k-wire-transfer-testing/skills/401k-wire-transfer-testing/SKILL.md`. Command: `/5220 [inputs]`.
 
 ## How to use a skill here
 1. **If installed as a plugin:** invoke via the Skill tool using the name shown in your session's

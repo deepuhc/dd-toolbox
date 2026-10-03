@@ -11,6 +11,7 @@ Agents should also read [AGENTS.md](AGENTS.md). The short version, in Claude Cod
 ```text
 /plugin marketplace add https://github.com/deepthip47/dd-toolbox.git
 /plugin install k1-workpaper-builder@dd-toolbox
+/plugin install 401k-wire-transfer-testing@dd-toolbox
 ```
 
 Type those at the Claude Code prompt (not in your terminal shell). Claude Code will ask you to
@@ -32,6 +33,7 @@ The bundled scripts are also usable **standalone** (no plugin runtime) — see I
 | Plugin | What it does |
 | ------ | ------------ |
 | **k1-workpaper-builder** | Extracts Schedule K-1 (Form 1065 & 1120-S) tax packages into a verified, multi-sheet Excel workpaper — every Part III box with per-code statement detail, capital accounts, liabilities, tie-out checks, and a state income/withholding/composite summary. Provides the `/k1-workpaper` command and an auto-triggering skill. |
+| **401k-wire-transfer-testing** | 401(k) plan audit WP 5220 wire transfer / timely remittance testing — matches every payroll check date's 401(k), Roth, loan and employer match withholdings to the recordkeeper's contribution report, computes business days to funding, and shows over/(under) funding. Works with any payroll provider and recordkeeper. Provides the `/5220` command and an auto-triggering skill. |
 
 ## Repository layout
 
@@ -40,7 +42,7 @@ The bundled scripts are also usable **standalone** (no plugin runtime) — see I
 ├── .claude-plugin/
 │   └── marketplace.json          # marketplace manifest (lists all plugins)
 ├── plugins/
-│   └── k1-workpaper-builder/
+│   ├── k1-workpaper-builder/
 │       ├── .claude-plugin/
 │       │   └── plugin.json        # plugin manifest
 │       ├── commands/              # slash commands (/k1-workpaper)
@@ -50,6 +52,10 @@ The bundled scripts are also usable **standalone** (no plugin runtime) — see I
 │               ├── SKILL.md
 │               ├── scripts/       # bundled Python helpers
 │               └── references/    # schema + prompt template (loaded on demand)
+│   └── 401k-wire-transfer-testing/
+│       ├── .claude-plugin/plugin.json
+│       ├── commands/5220.md       # /5220
+│       └── skills/401k-wire-transfer-testing/SKILL.md
 └── README.md
 ```
 

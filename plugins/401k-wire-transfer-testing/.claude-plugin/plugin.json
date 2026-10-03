@@ -1,0 +1,10 @@
+{
+  "name": "401k-wire-transfer-testing",
+  "version": "1.0.0",
+  "description": "401(k) plan audit WP 5220 wire transfer / timely remittance testing: match payroll register withholdings (401k, Roth, loans, ER match) to the recordkeeper's contribution report for every check date, compute business days to funding, and show over/(under) funding. Works with any payroll provider and recordkeeper.",
+  "author": {
+    "name": "Deepthi Shastry"
+  },
+  "keywords": ["401k", "benefit-plan-audit", "ebp", "5220", "timely-remittance", "wire-transfer", "payroll", "recordkeeper", "trustee", "workpaper", "cpa", "audit"],
+  "license": "MIT"
+}
